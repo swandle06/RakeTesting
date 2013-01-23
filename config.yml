@@ -1,0 +1,5 @@
+
+
+#Configuration parameters
+logger: DEBUG
+echo: true
