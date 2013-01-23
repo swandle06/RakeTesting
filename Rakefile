@@ -13,3 +13,14 @@ $loggerLog.info(@config)
 task :startR do
   @myAnalysis = SFCT.new(@config[:echo])
 end
+
+file "RFiles/#{@config[:esetfile]}" do |f|
+  if File.exist?("Data/#{@config[:esetfile]}")
+    FileUtils.cp("Data/#{@config[:esetfile]}", "RFiles/#{@config[:esetfile]}")
+  else
+    assembleEsetR = File.new(@config[:esetAssemblyQC])
+    @myAnalysis.create_eset(f.name, assembleEsetR)
+  end
+  puts "created eset file"
+end
+CLOBBER.include(@config[:esetfile])

@@ -10,4 +10,12 @@ class SFCT
     @myR.eval "setwd(cwd)"
   end
 
+  #Specific analysis functions
+  def create_eset(esetFile, esetR)
+    #  combineExpData.pl
+    #  eSample2phenoData.pl
+    FileUtils.touch(esetFile)
+    @myR.eval %Q{load ("RFiles/fastloMedian.RData")}
+  end
+
 end
