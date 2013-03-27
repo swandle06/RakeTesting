@@ -1,2 +1,4 @@
 RakeTesting
 ===========
+
+Testing connectivity.
